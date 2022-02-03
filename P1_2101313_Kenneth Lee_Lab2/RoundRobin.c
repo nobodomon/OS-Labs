@@ -27,10 +27,12 @@ responseTime[10];
     } 
     for (j = 0; j < (maxBurstTime / timeSlice) + 1; j++){ 
         for (i = 0; i < numProcesses; i++){ 
+            if(j == 0){
+                responseTime[i] = temp;
+            }
             if (burstTime[i] != 0){ 
                 if (burstTime[i] <= timeSlice){ 
                     //response time is first time the process gets CPU execution, therefore first process will be 0 * timeslice, 1* time slice and so on...
-                    responseTime[i] = i * timeSlice;
                     
                     turnAroundTime[i] = temp + burstTime[i]; 
                     //turn around time = exit time - burst time
@@ -48,7 +50,7 @@ responseTime[10];
                     temp = temp + timeSlice; 
                 } 
             } 
-        } 
+        }
     } 
  
     /*Calculate the ‘waiting time’, ‘turn-around-time’ and  
@@ -58,7 +60,7 @@ responseTime[10];
  
     printf("\n\t PROCESS\t BURST TIME\t WAITING TIME\t TURNAROUND TIME\t RESPONSE TIME\n"); 
     for (i = 0; i < numProcesses; i++) 
-        printf("\t P%d \t %d \t\t %d \t\t %d \t\t\t %d \n",  
+        printf("\t P%d \t\t %d \t\t %d \t\t %d \t\t\t %d \n",  
             i + 1, backupBurstTime[i], waitTime[i], turnAroundTime[i], responseTime[i]); 
     
     

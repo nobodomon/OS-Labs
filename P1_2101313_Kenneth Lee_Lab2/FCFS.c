@@ -38,7 +38,7 @@ responseTime[10];
  
     printf("\n\t PROCESS\t BURST TIME\t WAITING TIME\t TURNAROUND TIME\t RESPONSE TIME\n"); 
     for (i = 0; i < numProcesses; i++) 
-        printf("\t P%d \t %d \t\t %d \t\t %d \t\t\t %d \n",  
+        printf("\t P%d \t\t %d \t\t %d \t\t %d \t\t\t %d \n",  
             i + 1, backupBurstTime[i], waitTime[i], turnAroundTime[i], responseTime[i]); 
     
     
