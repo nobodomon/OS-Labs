@@ -1,0 +1,62 @@
+2. 
+    Binary semaphore,
+    Counting semaphore,
+    Mutex semaphore
+
+4. 
+    P1 -> r2 (hold)
+    P4 -> r2 (hold)
+    P3 -> r1 (hold)
+    P2 -> r1 (hold)
+    P1 -> r1 (require)
+    P3 -> r3 (require)
+
+    r1  r2
+    2   2
+P1  0+1 1
+P2  1-1 0
+P3  1   0+1
+P4  0   1-1
+
+4.ii.
+    no dead lock
+4.iii.
+    dead lock
+
+5. 
+    Prevention:
+
+    • The goal is to ensure that at least one of the necessary conditions for deadlock can never hold.
+
+    • Deadlock prevention is often impossible to implement.
+
+    • The system does not require additional a priori information regarding the overall potential use of each resource for each process.
+
+    • In order for the system to prevent the deadlock condition it does not need to know all the details of all resources in existence, available and requested.
+
+    • Deadlock prevention techniques include non-blocking synchronization algorithms, serializing tokens, Dijkstra's algorithm etc.
+
+    • Resource allocation strategy for deadlock prevention is conservative, it under commits the resources.
+
+    • All resources are requested at once.
+
+    • In some cases preempts more than often necessary.
+
+    Avoidance:
+
+    • The goal for deadlock avoidance is to the system must not enter an unsafe state.
+
+    • Deadlock avoidance is often impossible to implement.
+
+    • The system requires additional a priori information regarding the overall potential use of each resource for each process.
+
+    • In order for the system to be able to figure out whether the next state will be safe or unsafe, it must know in advance at any time the number and type of all resources in existence, available, and requested.
+
+    • Deadlock avoidance techniques include Banker’s algorithm, Wait/Die, Wound/Wait etc.
+
+    • Resource allocation strategy for deadlock avoidance selects midway between that of detection and prevention.
+
+    • Needs to be manipulated until at least one safe path is found.
+
+    • There is no preemption.
+
