@@ -122,6 +122,9 @@ void main()
         exit(5);
     }
 
+    // add ascii data: "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG"
+    ret = fputs(strDecrypted, fpBinDecrypt);
+
     printf("Write different data types into bin mode data file, %s\n", "Lab5_BinData.bin");
     fpBin = fopen("Lab5_BinData.bin", "wb");
     if (fpBin == NULL)
@@ -130,6 +133,7 @@ void main()
         fclose(fpBin);
         exit(6);
     }
+    
     // add ascii data: "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG"
     ret = fputs(strDecrypted, fpBin);
 
